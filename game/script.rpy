@@ -32,6 +32,8 @@ label start:
 
     e "Entering mini game!"
 
+    call narrative from narrative_call
+
     call minigame from minigame_call
 
     return

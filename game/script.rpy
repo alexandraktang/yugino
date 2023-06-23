@@ -3,6 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+define a = Character("Amina", color ="#660e60")
 define e = Character("Eileen")
 
 

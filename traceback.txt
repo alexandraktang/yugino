@@ -1,35 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/ActionEditor.rpy", line 38, in script
-    init python in _viewers:
-  File "game/ActionEditor.rpy", line 38, in script
-    init python in _viewers:
-  File "game/ActionEditor.rpy", line 49, in <module>
-    euler_slerp = renpy.display.accelerator.quaternion
-AttributeError: module 'renpy.display.accelerator' has no attribute 'quaternion'
+  File "game/script.rpy", line 76, in script
+    with dissolve(.5)
+TypeError: 'Dissolve' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
-    renpy.main.main()
-  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\main.py", line 558, in main
-    renpy.game.context().run(node)
-  File "game/ActionEditor.rpy", line 38, in script
-    init python in _viewers:
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
-  File "game/ActionEditor.rpy", line 38, in script
-    init python in _viewers:
-  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/ActionEditor.rpy", line 49, in <module>
-    euler_slerp = renpy.display.accelerator.quaternion
-AttributeError: module 'renpy.display.accelerator' has no attribute 'quaternion'
+  File "game/script.rpy", line 76, in script
+    with dissolve(.5)
+  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1678, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1757, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 2975, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3973, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "C:\Users\jfarn\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3919, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+TypeError: 'Dissolve' object is not callable
 
 Windows-10-10.0.19045 AMD64
-Ren'Py 8.0.3.22090809
+Ren'Py 8.1.1.23060707
 Yugino_test 1.0
-Fri Jun 23 11:15:07 2023
+Fri Jul  7 15:16:14 2023

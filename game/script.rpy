@@ -4,8 +4,38 @@
 # name of the character.
 
 define a = Character("Amina", color ="#660e60")
-define p = Character("Para", color = "#9f9393")
+define p = Character("Paya", color = "#9f9393")
+define r = Character("River", color = "#b1734f") 
 
+image river placeholder = "river_placeholder.png"
+image river happy = "river_happy.png"
+image river sad = "river_sad.png"
+
+image amina placeholder = "amina_placeholder.png"
+image amina happy = "amina_happy.png"
+image amina sad = "amina_sad.png"
+
+image paya placeholder = "paya_placeholder.png"
+image paya happy = "paya_happy.png"
+image paya sad = "paya_sad.png"
+image paya sweatdrop = "paya_sweatdrop.png"
+image paya love = "paya_love.png"
+image paya shock = "paya_shock.png"
+image paya confused = "paya_confused.png"
+image paya tired = "paya_tired.png"
+
+#defining image position states here
+transform center:
+    xalign 0.5
+    yalign 0.5
+
+transform leftcenter:
+    xalign 0.0
+    yalign 0.5
+
+transform rightcenter:
+    xalign 1.0
+    yalign 0.5
 
 # The game starts here.
 
@@ -15,23 +45,47 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg outside_school
+    scene outside_school
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    "..." "Hey Paya? Earth to Paya!"
 
-    # These display lines of dialogue.
+    scene classroom
+    with dissolve
 
-    e "You've created a new Ren'Py game."
+    pause 0.5
+    
+    show river placeholder at center
+    with dissolve 
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    r "Hey, are you in there? It's your turn."
 
-    # This ends the game.
+    show river placeholder at rightcenter
+    with move
 
-    e "Entering mini game!"
+    show paya tired at leftcenter
+    with dissolve
+
+   
+    p "Ahh, sorry River! I must have been spacing out again."
+
+    show river happy
+    with dissolve
+    
+    r "Leave it to you to start falling asleep in the middle of a game."
+
+    hide river
+    show paya sweatdrop at center
+    with dissolve
+
+    "Yeah, that's me, all right. Paya, the 22 year old college student who spaces even in my favorite card game."
+    "My best friend River found this game NAME OF CARD GAME HERE a few months ago and now it seems like everyone's playing it!"
+    "Though, I think for us, it's honestly just been nice to have a fun way to destresss from everything else we have going on lately."
+
+    p "Entering mini game!"
 
     call narrative from narrative_call
 
